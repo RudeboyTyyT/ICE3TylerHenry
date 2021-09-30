@@ -5,11 +5,13 @@
  */
 
 
+#pragma once
+
 #ifndef _PROFESSOR_H
 #define _PROFESSOR_H
 
 #include "Person.h"
-
+#include <string>
 
 class Professor: public Person {
 public: 
@@ -20,20 +22,20 @@ public:
  * @param age
  * @param employee_id
  */
-void Professor(string first_name, string last_name, float age, string employee_id);
+Professor(const std::string& first_name, const std::string& last_name, const float age, const std::string employee_id);
     
-string getEmployeeID();
+std::string getEmployeeID() const;
     
 /**
  * @param value
  */
-void setEmployeeID(string value);
+void setEmployeeID(const std::string& value);
     
-void Teaches();
+void Teaches() const;
     
-string ToString();
+std::string ToString() override;
 private: 
-    string m_employeeID;
+    std::string m_employeeID;
 };
 
 #endif //_PROFESSOR_H
